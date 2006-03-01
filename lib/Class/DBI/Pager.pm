@@ -2,7 +2,7 @@ package Class::DBI::Pager;
 
 use strict;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = 0.07;
+$VERSION = 0.08;
 
 use Class::DBI 0.90;
 use Data::Page;
@@ -28,7 +28,7 @@ sub _pager {
 
 BEGIN {
     my @methods = qw(total_entries entries_per_page current_page entries_on_this_page
-		     first_page last_page first last previous_page next_page);
+		     first_page last_page first last previous_page next_page pages_in_navigation);
     for my $method (@methods) {
 	no strict 'refs';
 	*$method = sub {
